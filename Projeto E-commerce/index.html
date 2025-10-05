@@ -6,26 +6,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-commerce Master</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-    <header>
-        <a href="#"><img src="assets/images/logo.svg" alt="Dev em Dobro"></a>
-        
-        <nav>
-            <ul>
-                <li><a href="#Home">Home</a></li>
-                <li><a href="#Sobre">Sobre</a></li>
-                <li><a href="#Produtos">Produtos</a></li>
-                <li><a href="#faq">Perguntas frequentes</a></li>
-                <li><a href="#Contato">Fale conosco</a></li>
-            </ul>
-        </nav>
-        <button>
-            <img src="assets/images/icone_carrinho.svg" alt="Carrinho de compras">
-        </button>
+    <header class="cabecalho">
+        <div class="hader-conteudo">
+            <div class="header-esquerda">
+
+                <button class="menu-hamburguer" aria-label="Abrir menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <a href="#"><img src="assets/images/logo.svg" alt="Dev em Dobro"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#Sobre">Sobre</a></li>
+                    <li><a href="#Produtos">Produtos</a></li>
+                    <li><a href="#faq">Perguntas frequentes</a></li>
+                    <li><a href="#Contato">Fale conosco</a></li>
+                </ul>
+            </nav>
+            <button>
+                <img src="assets/images/icone_carrinho.svg" alt="Carrinho de compras">
+            </button>
+        </div>
     </header>
     <main>
         <section>
@@ -55,7 +72,7 @@
                     </div>
                 </li>
             </ul>
-            
+
         </section>
     </main>
     <footer>
