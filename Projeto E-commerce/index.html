@@ -13,24 +13,25 @@
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css">
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/cabecalho.css">
+    <link rel="stylesheet" href="css/produtos.css">
+    
 </head>
 
 <body>
     <header class="cabecalho">
-        <div class="hader-conteudo">
+        <div class="header-conteudo">
             <div class="header-esquerda">
 
-                <button class="menu-hamburguer" aria-label="Abrir menu">
+                <button class="menu-hamburguer">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
 
-                <a href="#"><img src="assets/images/logo.svg" alt="Dev em Dobro"></a>
+                <a class="logo" href="/"><img src="assets/images/logo.svg" alt="Dev em Dobro"></a>
             </div>
-            <nav>
+            <nav class="menu-principal">
                 <ul>
                     <li><a href="#Home">Home</a></li>
                     <li><a href="#Sobre">Sobre</a></li>
@@ -39,7 +40,7 @@
                     <li><a href="#Contato">Fale conosco</a></li>
                 </ul>
             </nav>
-            <button>
+            <button class="botao-carrinho" data-micromodal-trigger="modal-1" aria-label="Ver carrinho de compras">
                 <img src="assets/images/icone_carrinho.svg" alt="Carrinho de compras">
             </button>
         </div>
