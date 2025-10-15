@@ -34,6 +34,7 @@ botoesAdicionarAoCarrinho.forEach(botao => {
 
         salvarProdutosNoCarrinho(carrinho);
         atualizarContadorCarrinho();
+        renderizarTabelaCarrinho();
     });
 });
 
@@ -53,10 +54,10 @@ function obterProdutosDoCarrinho() {
 }
 
 function atualizarContadorCarrinho() {
-    const carrinho = obterProdutosDoCarrinho();
+    const produtos = obterProdutosDoCarrinho();
     let total = 0;
 
-    carrinho.forEach(produto => {
+    produtos.forEach(produto => {
         total += produto.quantidade;
     });
 
@@ -66,3 +67,39 @@ function atualizarContadorCarrinho() {
 
 // Essa função deve ser chamada sempre que o carrinho for atualizado
 atualizarContadorCarrinho();
+
+
+// Renderizar a tabela do carrinho de compras
+function renderizarTabelaCarrinho() {
+    const produtos = obterProdutosDoCarrinho();
+    const corpoTabela = document.querySelector('#modal-1-content table tbody');
+
+    if (!corpoTabela) return;
+
+    corpoTabela.innerHTML = '';
+
+
+    produtos.forEach(produto => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = ` <td class="td-produto">
+                <img 
+                src="${produto.imagem}"
+                alt="${produto.nome}" 
+                />
+                </td>
+                <td>${produto.nome}</td>
+                <td class="preco-unitario">R$ ${produto.preco.toFixed(2).replace('.', ',')}</td>
+                <td class="td-quantidade">
+                <input type="number" min="1" value="${produto.quantidade}" />
+                </td>
+                <td class="td-preco-total">R$ ${produto.preco.toFixed(2).replace('.', ',')}</td>
+                <td><button class="deletar-produto" data-id="${produto.id}"></button>
+                </td>
+                `;
+        corpoTabela.appendChild(tr);
+    });
+}
+
+//Lembre de chamar essa função logo após adicionar um item ao carrinho, senão a modal não atualiza os novos dados:
+
+renderizarTabelaCarrinho();
