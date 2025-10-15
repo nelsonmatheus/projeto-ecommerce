@@ -33,6 +33,7 @@ botoesAdicionarAoCarrinho.forEach(botao => {
         }
 
         salvarProdutosNoCarrinho(carrinho);
+        atualizarContadorCarrinho();
     });
 });
 
@@ -50,3 +51,18 @@ function obterProdutosDoCarrinho() {
     return produtos ? JSON.parse(produtos) : [];
 
 }
+
+function atualizarContadorCarrinho() {
+    const carrinho = obterProdutosDoCarrinho();
+    let total = 0;
+
+    carrinho.forEach(produto => {
+        total += produto.quantidade;
+    });
+
+    document.getElementById('contador-carrinho').textContent = total;
+}
+
+
+// Essa função deve ser chamada sempre que o carrinho for atualizado
+atualizarContadorCarrinho();
