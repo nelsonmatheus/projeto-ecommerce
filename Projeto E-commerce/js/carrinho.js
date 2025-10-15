@@ -93,7 +93,7 @@ function renderizarTabelaCarrinho() {
                 <input type="number" min="1" value="${produto.quantidade}" />
                 </td>
                 <td class="td-preco-total">R$ ${produto.preco.toFixed(2).replace('.', ',')}</td>
-                <td><button class="deletar-produto" data-id="${produto.id}"></button>
+                <td><button class="btn-remover" data-id="${produto.id}"></button>
                 </td>
                 `;
         corpoTabela.appendChild(tr);
@@ -103,3 +103,22 @@ function renderizarTabelaCarrinho() {
 //Lembre de chamar essa função logo após adicionar um item ao carrinho, senão a modal não atualiza os novos dados:
 
 renderizarTabelaCarrinho();
+
+
+const corpoTabela = document.querySelector('#modal-1-content table tbody');
+corpoTabela.addEventListener('click', (evento) => {
+    if (evento.target.classList.contains('btn-remover')) {
+        const id = evento.target.dataset.id;
+        removerProdutoDoCarrinho(id);
+    }
+});
+
+function removerProdutoDoCarrinho(id) {
+    const produtos = obterProdutosDoCarrinho();
+
+
+    const carrinhoAtualizado = produtos.filter(produto => produto.id !== id);
+    salvarProdutosNoCarrinho(carrinhoAtualizado);
+    atualizarContadorCarrinho();
+    renderizarTabelaCarrinho();
+}
