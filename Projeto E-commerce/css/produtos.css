@@ -18,9 +18,13 @@ main section ul {
 }
 
 .produto {
-    background-color: var(--cor-neutra-escura);
+    background-color: var(--cor-cinza-escura);
     max-width: 368px;
-    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;   
 }
 
 .produto figure img {
