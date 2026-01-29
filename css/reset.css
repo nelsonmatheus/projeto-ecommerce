@@ -1,0 +1,69 @@
+/* Reset CSS completo para garantir consistência entre navegadores */
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    
+}
+
+/* Remover estilos de links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Remover outline de elementos focados (opcional, use com cuidado) */
+:focus {
+    outline: 0;
+}
+
+/* Box-sizing border-box para todos os elementos */
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+/* Remover background e borda de botões */
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+
